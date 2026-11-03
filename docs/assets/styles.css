@@ -1,8 +1,52 @@
+/* ---------- Temas: claro (por defecto) y oscuro ---------- */
+:root {
+  color-scheme: light;
+  --bg: #F6F7F9; --surface: #FFFFFF; --surface-2: #FCFCFD; --surface-3: #F9FAFB;
+  --subtle: #F2F4F7; --track: #EAECF0; --line: #E4E7EC; --line-strong: #D0D5DD;
+  --transit-bg: #EEF1F5; --row-hover: #FAFAFF; --row-sel: #F4F5FF;
+  --accent-soft: #EEF0FF; --ok-soft: #E3F4EF; --warn-soft: #FEF0E1;
+  --ink: #101828; --ink-hover: #1D2939;
+  --text: #101828; --text-2: #344054; --text-3: #475467; --muted: #667085; --dim: #98A2B3;
+  --on-ink: #FFFFFF; --on-ink-2: #D0D5DD;
+  --accent-text: #4F46E5; --accent-strong: #3730A3;
+  --ok-text: #0E6E5C; --ok-strong: #0B5F50;
+  --warn-text: #B54708; --warn-strong: #9C3D06;
+  --banner-text: #7A2E05; --banner-hover: #4A1B03;
+  --border: #E4E7EC; --border-soft: #EAECF0; --border-faint: #F2F4F7; --border-strong: #D0D5DD;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0B0F17; --surface: #141A24; --surface-2: #18202C; --surface-3: #19212D;
+  --subtle: #1F2834; --track: #273141; --line: #273141; --line-strong: #3A4555;
+  --transit-bg: #263042; --row-hover: #19202E; --row-sel: #1D2240;
+  --accent-soft: #252A57; --ok-soft: #0F3229; --warn-soft: #3A230F;
+  --ink: #344054; --ink-hover: #475467;
+  --text: #F2F4F7; --text-2: #D0D5DD; --text-3: #AEB6C3; --muted: #8F99AA; --dim: #6B7586;
+  --on-ink: #FFFFFF; --on-ink-2: #D0D5DD;
+  --accent-text: #A5B0FF; --accent-strong: #C7CDFF;
+  --ok-text: #5CD3B2; --ok-strong: #8BE3CA;
+  --warn-text: #FDB27A; --warn-strong: #FDBF92;
+  --banner-text: #FCD9BD; --banner-hover: #FFFFFF;
+  --border: #273141; --border-soft: #222B39; --border-faint: #1C2430; --border-strong: #3A4555;
+}
+
+/* Botón para cambiar de tema (lo inserta assets/theme.js) */
+.theme-toggle {
+  position: fixed; right: 16px; bottom: 16px; z-index: 50;
+  width: 48px; height: 48px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16, 24, 40, 0.14);
+}
+.theme-toggle:hover { border-color: var(--border-strong); }
+.theme-toggle:focus-visible { outline: 2px solid #4F46E5; outline-offset: 2px; }
+body { padding-bottom: 72px; }
+
 /* Estilos base compartidos por todas las pantallas de la demo */
 body {
   margin: 0;
-  background: #F6F7F9;
-  color: #101828;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -11,8 +55,8 @@ body {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
-a { color: #4F46E5; text-decoration: none; }
-a:hover { color: #3730A3; }
+a { color: var(--accent-text); text-decoration: none; }
+a:hover { color: var(--accent-strong); }
 button, select, input, textarea { font-family: inherit; }
 
 .sr-only {
@@ -32,29 +76,29 @@ button, select, input, textarea { font-family: inherit; }
   justify-content: center;
   gap: 6px 16px;
   padding: 10px 16px;
-  background: #FEF0E1;
-  color: #7A2E05;
+  background: var(--warn-soft);
+  color: var(--banner-text);
   font-size: 13px;
   line-height: 1.4;
   text-align: center;
 }
-.demo-banner a { color: #7A2E05; font-weight: 600; }
-.demo-banner a:hover { color: #4A1B03; }
+.demo-banner a { color: var(--banner-text); font-weight: 600; }
+.demo-banner a:hover { color: var(--banner-hover); }
 
 /* ---------- Mesa de conciliación ---------- */
 .filter {
   display: inline-flex; align-items: center; gap: 8px;
   height: 42px; padding: 0 14px; border-radius: 12px;
   font-size: 14px; font-weight: 500; cursor: pointer;
-  border: 1px solid #E4E7EC; background: #FFFFFF; color: #344054;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
 }
 .filter .count {
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
-  font-size: 12px; background: #F2F4F7; color: #475467;
+  font-size: 12px; background: var(--subtle); color: var(--text-3);
 }
-.filter.on { border-color: #101828; background: #101828; color: #FFFFFF; }
-.filter.on .count { background: rgba(255,255,255,0.18); color: #FFFFFF; }
+.filter.on { border-color: var(--ink); background: var(--ink); color: var(--on-ink); }
+.filter.on .count { background: rgba(255,255,255,0.18); color: var(--on-ink); }
 
 .mov-grid {
   display: grid;
@@ -63,50 +107,50 @@ button, select, input, textarea { font-family: inherit; }
   align-items: center;
 }
 .mov-row {
-  width: 100%; padding: 14px 20px; border: 0; border-bottom: 1px solid #F2F4F7;
-  text-align: left; cursor: pointer; background: #FFFFFF; color: inherit;
+  width: 100%; padding: 14px 20px; border: 0; border-bottom: 1px solid var(--border-faint);
+  text-align: left; cursor: pointer; background: var(--surface); color: inherit;
 }
-.mov-row:hover { background: #FAFAFF; }
-.mov-row.sel { background: #F4F5FF; }
+.mov-row:hover { background: var(--row-hover); }
+.mov-row.sel { background: var(--row-sel); }
 .mov-row:focus-visible { outline: 2px solid #4F46E5; outline-offset: -2px; }
 .side {
   display: grid; grid-template-columns: 48px minmax(0, 1fr) auto;
   gap: 10px; align-items: center; min-width: 0;
 }
-.side .f { font-size: 12px; color: #667085; }
+.side .f { font-size: 12px; color: var(--muted); }
 .side .g { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.side .m { font-size: 14px; font-weight: 500; color: #101828; }
+.side .m { font-size: 14px; font-weight: 500; color: var(--text); }
 .ghost {
   display: flex; align-items: center; height: 36px; padding: 0 12px;
-  border-radius: 10px; border: 1px dashed #D0D5DD; font-size: 13px; color: #667085;
+  border-radius: 10px; border: 1px dashed var(--border-strong); font-size: 13px; color: var(--muted);
 }
 .chip {
   display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px;
   border-radius: 999px; font-size: 12px; font-weight: 500; white-space: nowrap;
 }
 .chip .dot { width: 7px; height: 7px; border-radius: 999px; }
-.chip-conciliado { background: #E3F4EF; color: #0B5F50; }
+.chip-conciliado { background: var(--ok-soft); color: var(--ok-strong); }
 .chip-conciliado .dot { background: #0E6E5C; }
-.chip-sugerido { background: #EEF0FF; color: #3730A3; }
+.chip-sugerido { background: var(--accent-soft); color: var(--accent-strong); }
 .chip-sugerido .dot { background: #4F46E5; }
-.chip-transito { background: #EEF1F5; color: #344054; }
+.chip-transito { background: var(--transit-bg); color: var(--text-2); }
 .chip-transito .dot { background: #667085; }
-.chip-pendiente { background: #FEF0E1; color: #9C3D06; }
+.chip-pendiente { background: var(--warn-soft); color: var(--warn-strong); }
 .chip-pendiente .dot { background: #DC6803; }
 
 .btn-primary {
   height: 46px; padding: 0 18px; border-radius: 12px; border: 0;
-  background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500; cursor: pointer;
+  background: #4F46E5; color: var(--on-ink); font-size: 14px; font-weight: 500; cursor: pointer;
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
 }
-.btn-primary:hover { background: #4338CA; color: #FFFFFF; }
-.btn-dark { background: #101828; }
-.btn-dark:hover { background: #1D2939; }
+.btn-primary:hover { background: #4338CA; color: var(--on-ink); }
+.btn-dark { background: var(--ink); }
+.btn-dark:hover { background: var(--ink-hover); }
 .btn-secondary {
-  height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid #D0D5DD;
-  background: #FFFFFF; color: #344054; font-size: 14px; font-weight: 500; cursor: pointer;
+  height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--text-2); font-size: 14px; font-weight: 500; cursor: pointer;
 }
 .btn-disabled {
-  height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid #E4E7EC;
-  background: #F2F4F7; color: #667085; font-size: 14px; font-weight: 500; cursor: not-allowed;
+  height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid var(--border);
+  background: var(--subtle); color: var(--muted); font-size: 14px; font-weight: 500; cursor: not-allowed;
 }

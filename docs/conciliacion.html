@@ -6,33 +6,34 @@
 <title>Los Cerezos · Mesa de conciliación</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="assets/styles.css">
+<script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('tema')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.setAttribute('data-theme',t)})();</script>
 </head>
 <body>
 <div class="demo-banner" role="note"><a href="index.html">← Inicio</a><span>Demo con datos de ejemplo: los montos no son las cuentas reales del Condominio Los Cerezos.</span></div>
-<div style="min-height: 100vh; background: #F6F7F9">
+<div style="min-height: 100vh; background: var(--bg)">
 
-<header style="background: #FFFFFF; border-bottom: 1px solid #E4E7EC">
+<header style="background: var(--surface); border-bottom: 1px solid var(--border)">
 <div style="max-width: 1360px; margin: 0 auto; padding: 12px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
 <div style="display: flex; align-items: center; gap: 12px">
-<div style="width: 34px; height: 34px; border-radius: 10px; background: #101828; display: flex; align-items: center; justify-content: center; color: #FFFFFF">
+<div style="width: 34px; height: 34px; border-radius: 10px; background: var(--ink); display: flex; align-items: center; justify-content: center; color: var(--on-ink)">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="12" r="5.5"></circle><circle cx="15" cy="12" r="5.5"></circle></svg>
 </div>
 <div style="display: flex; flex-direction: column">
 <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em">Conciliador</span>
-<span style="font-size: 12px; color: #667085">Condominio Los Cerezos · 80 casas</span>
+<span style="font-size: 12px; color: var(--muted)">Condominio Los Cerezos · 80 casas</span>
 </div>
 </div>
 <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px; flex: 1 1 auto">
-<a href="resumen.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Resumen</a>
-<a href="conciliacion.html" aria-current="page" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: #F2F4F7; color: #101828; font-size: 14px; font-weight: 500">Conciliación</a>
-<a href="importar.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Importar</a>
-<a href="vecino.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Vista vecino</a>
-<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: #667085; font-size: 14px; font-weight: 500">Cierre</span>
-<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: #667085; font-size: 14px; font-weight: 500">Bitácora</span>
+<a href="resumen.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: var(--text-3); font-size: 14px; font-weight: 500">Resumen</a>
+<a href="conciliacion.html" aria-current="page" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: var(--subtle); color: var(--text); font-size: 14px; font-weight: 500">Conciliación</a>
+<a href="importar.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: var(--text-3); font-size: 14px; font-weight: 500">Importar</a>
+<a href="vecino.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: var(--text-3); font-size: 14px; font-weight: 500">Vista vecino</a>
+<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: var(--muted); font-size: 14px; font-weight: 500">Cierre</span>
+<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: var(--muted); font-size: 14px; font-weight: 500">Bitácora</span>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px">
-<div style="width: 34px; height: 34px; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AD</div>
-<span style="font-size: 13px; color: #475467">Administración</span>
+<div style="width: 34px; height: 34px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AD</div>
+<span style="font-size: 13px; color: var(--text-3)">Administración</span>
 </div>
 </div>
 </header>
@@ -41,16 +42,16 @@
 
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #667085">Cuenta corriente ••• 4821 · Octubre 2026 · 118 movimientos del banco · 121 registros del libro</span>
+<span style="font-size: 13px; color: var(--muted)">Cuenta corriente ••• 4821 · Octubre 2026 · 118 movimientos del banco · 121 registros del libro</span>
 <h1 style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -0.025em">Mesa de conciliación</h1>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 6px; min-width: 220px">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
 <span style="font-size: 14px; font-weight: 600"><span class="num" id="pct">97%</span> conciliado</span>
-<span style="font-size: 12px; color: #667085"><span class="num" id="conc">115</span> de 118</span>
+<span style="font-size: 12px; color: var(--muted)"><span class="num" id="conc">115</span> de 118</span>
 </div>
-<div style="height: 8px; border-radius: 999px; background: #EAECF0; overflow: hidden">
+<div style="height: 8px; border-radius: 999px; background: var(--track); overflow: hidden">
 <div id="bar" style="height: 8px; border-radius: 999px; background: #4F46E5; width: 97%; transition: width 0.3s ease"></div>
 </div>
 </div>
@@ -60,20 +61,20 @@
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
 <div id="filters" role="group" aria-label="Filtrar por estado" style="display: flex; flex-wrap: wrap; gap: 8px"></div>
-<label style="display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 12px; border: 1px solid #E4E7EC; background: #FFFFFF; min-width: 260px; color: #667085">
+<label style="display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); min-width: 260px; color: var(--muted)">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
 <span class="sr-only">Buscar movimiento</span>
-<input id="search" type="search" placeholder="Buscar glosa, casa o monto" style="border: 0; outline: none; background: transparent; font-size: 14px; color: #101828; flex: 1; min-width: 0">
+<input id="search" type="search" placeholder="Buscar glosa, casa o monto" style="border: 0; outline: none; background: transparent; font-size: 14px; color: var(--text); flex: 1; min-width: 0">
 </label>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
 
-<section aria-label="Movimientos" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; overflow: hidden">
+<section aria-label="Movimientos" style="flex: 999 1 640px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden">
 <div style="overflow-x: auto">
 <div style="min-width: 820px">
-<div class="mov-grid" style="padding: 12px 20px; background: #F9FAFB; border-bottom: 1px solid #EAECF0; font-size: 12px; font-weight: 500; color: #475467">
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 999px; background: #101828"></span>Banco (cartola)</span>
+<div class="mov-grid" style="padding: 12px 20px; background: var(--surface-3); border-bottom: 1px solid var(--border-soft); font-size: 12px; font-weight: 500; color: var(--text-3)">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 999px; background: var(--ink)"></span>Banco (cartola)</span>
 <span style="text-align: center">Estado</span>
 <span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 999px; background: #4F46E5"></span>Libro (administración)</span>
 </div>
@@ -82,15 +83,15 @@
 </div>
 </section>
 
-<aside aria-label="Detalle del movimiento" style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<aside aria-label="Detalle del movimiento" style="flex: 1 1 380px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
 <div id="detail" style="display: flex; flex-direction: column; gap: 18px" aria-live="polite"></div>
-<div style="height: 1px; background: #EAECF0"></div>
+<div style="height: 1px; background: var(--track)"></div>
 <div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 12px; font-weight: 600; color: #475467">Comentarios</span>
+<span style="font-size: 12px; font-weight: 600; color: var(--text-3)">Comentarios</span>
 <div id="comments" style="display: flex; flex-direction: column; gap: 12px"></div>
 <label style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 12px; color: #475467">Agregar comentario</span>
-<textarea rows="2" placeholder="Escribe una pregunta o una aclaración…" style="resize: vertical; border: 1px solid #D0D5DD; border-radius: 12px; padding: 10px 12px; font-size: 14px; color: #101828"></textarea>
+<span style="font-size: 12px; color: var(--text-3)">Agregar comentario</span>
+<textarea rows="2" placeholder="Escribe una pregunta o una aclaración…" style="resize: vertical; border: 1px solid var(--border-strong); border-radius: 12px; padding: 10px 12px; font-size: 14px; color: var(--text)"></textarea>
 </label>
 </div>
 </aside>
@@ -99,5 +100,6 @@
 </main>
 </div>
 <script src="assets/conciliacion.js"></script>
+<script src="assets/theme.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@
 
   var ICON_ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>';
   var ICON_SPARK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg>';
-  var ICON_INFO = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475467" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>';
+  var ICON_INFO = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--text-3); flex: none; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>';
   var ICON_CHECK = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>';
 
   function rowsWithState() {
@@ -60,7 +60,7 @@
   function side(x, mono, emptyText) {
     if (!x) return '<span class="ghost">' + emptyText + '</span>';
     return '<span class="side"><span class="f">' + x.f + '</span>' +
-      '<span class="g' + (mono ? ' num' : '') + '" style="font-size: ' + (mono ? '12.5px; color: #344054' : '14px; color: #101828') + '">' + x.g + '</span>' +
+      '<span class="g' + (mono ? ' num' : '') + '" style="font-size: ' + (mono ? '12.5px; color: var(--text-2)' : '14px; color: var(--text)') + '">' + x.g + '</span>' +
       '<span class="m num">' + x.m + '</span></span>';
   }
 
@@ -110,9 +110,9 @@
     var rowsEl = document.getElementById('rows');
     if (shown.length === 0) {
       rowsEl.innerHTML = '<div style="padding: 48px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">' +
-        '<div style="width: 44px; height: 44px; border-radius: 999px; background: #E3F4EF; color: #0E6E5C; display: flex; align-items: center; justify-content: center">' + ICON_CHECK + '</div>' +
+        '<div style="width: 44px; height: 44px; border-radius: 999px; background: var(--ok-soft); color: var(--ok-text); display: flex; align-items: center; justify-content: center">' + ICON_CHECK + '</div>' +
         '<span style="font-size: 15px; font-weight: 600">' + (state.q ? 'Sin resultados para la búsqueda' : 'Nada pendiente en este filtro') + '</span>' +
-        '<span style="font-size: 13px; color: #667085">' + (state.q ? 'Prueba con otra glosa, casa o monto.' : 'Todo lo que había aquí ya quedó resuelto.') + '</span></div>';
+        '<span style="font-size: 13px; color: var(--muted)">' + (state.q ? 'Prueba con otra glosa, casa o monto.' : 'Todo lo que había aquí ya quedó resuelto.') + '</span></div>';
     } else {
       rowsEl.innerHTML = shown.map(function (r) {
         var sel = r.id === state.selected;
@@ -131,11 +131,11 @@
     var card = function (label, x, emptyText, mono) {
       var inner = x
         ? '<span class="num" style="font-size: 17px; font-weight: 600">' + x.m + '</span>' +
-          '<span style="font-size: 12px; color: #667085">' + x.f + '-2026</span>' +
-          '<span' + (mono ? ' class="num"' : '') + ' style="font-size: ' + (mono ? '12px' : '13px') + '; color: #344054; word-break: break-word">' + x.g + '</span>'
-        : '<span style="font-size: 13px; color: #667085; line-height: 1.45">' + emptyText + '</span>';
-      return '<div style="border: 1px solid #EAECF0; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px; min-width: 0">' +
-        '<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475467">' + label + '</span>' + inner + '</div>';
+          '<span style="font-size: 12px; color: var(--muted)">' + x.f + '-2026</span>' +
+          '<span' + (mono ? ' class="num"' : '') + ' style="font-size: ' + (mono ? '12px' : '13px') + '; color: var(--text-2); word-break: break-word">' + x.g + '</span>'
+        : '<span style="font-size: 13px; color: var(--muted); line-height: 1.45">' + emptyText + '</span>';
+      return '<div style="border: 1px solid var(--border-soft); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px; min-width: 0">' +
+        '<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-3)">' + label + '</span>' + inner + '</div>';
     };
 
     var d = '';
@@ -144,25 +144,25 @@
     d += '<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">' +
       card('Banco', s.b, 'Todavía no aparece en la cartola', true) +
       card('Libro', s.l, 'No está registrado en el libro', false) + '</div>';
-    d += '<div style="display: flex; gap: 10px; padding: 14px; border-radius: 12px; background: #F6F7F9">' + ICON_INFO +
-      '<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 600; color: #475467">' + whyTitle + '</span>' +
-      '<span style="font-size: 14px; line-height: 1.5; color: #344054">' + s.razon + '</span></div></div>';
+    d += '<div style="display: flex; gap: 10px; padding: 14px; border-radius: 12px; background: var(--bg)">' + ICON_INFO +
+      '<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 600; color: var(--text-3)">' + whyTitle + '</span>' +
+      '<span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">' + s.razon + '</span></div></div>';
     if (s.status === 'transito') {
-      d += '<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #475467">No es un error: ya está en el libro y va a aparecer en la cartola cuando el banco la procese. Queda abierta y pasa al período siguiente.</p>';
+      d += '<p style="margin: 0; font-size: 13px; line-height: 1.55; color: var(--text-3)">No es un error: ya está en el libro y va a aparecer en la cartola cuando el banco la procese. Queda abierta y pasa al período siguiente.</p>';
     }
     if (s.doc) {
-      d += '<div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 12px; font-weight: 600; color: #475467">Comprobante</span>' +
-        '<div style="border-radius: 14px; background: #F2F4F7; padding: 16px; display: flex; gap: 16px; align-items: center">' +
-        '<div aria-hidden="true" style="width: 92px; height: 116px; flex: none; border-radius: 6px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">' +
-        '<div style="height: 6px; width: 60%; border-radius: 3px; background: #101828"></div><div style="height: 4px; width: 85%; border-radius: 2px; background: #D0D5DD"></div><div style="height: 4px; width: 70%; border-radius: 2px; background: #D0D5DD"></div>' +
-        '<div style="height: 4px; width: 80%; border-radius: 2px; background: #EAECF0; margin-top: 8px"></div><div style="height: 4px; width: 65%; border-radius: 2px; background: #EAECF0"></div><div style="height: 4px; width: 75%; border-radius: 2px; background: #EAECF0"></div>' +
+      d += '<div style="display: flex; flex-direction: column; gap: 8px"><span style="font-size: 12px; font-weight: 600; color: var(--text-3)">Comprobante</span>' +
+        '<div style="border-radius: 14px; background: var(--subtle); padding: 16px; display: flex; gap: 16px; align-items: center">' +
+        '<div aria-hidden="true" style="width: 92px; height: 116px; flex: none; border-radius: 6px; background: var(--surface); border: 1px solid var(--border); padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">' +
+        '<div style="height: 6px; width: 60%; border-radius: 3px; background: var(--ink)"></div><div style="height: 4px; width: 85%; border-radius: 2px; background: var(--line-strong)"></div><div style="height: 4px; width: 70%; border-radius: 2px; background: var(--line-strong)"></div>' +
+        '<div style="height: 4px; width: 80%; border-radius: 2px; background: var(--track); margin-top: 8px"></div><div style="height: 4px; width: 65%; border-radius: 2px; background: var(--track)"></div><div style="height: 4px; width: 75%; border-radius: 2px; background: var(--track)"></div>' +
         '<div style="height: 6px; width: 45%; border-radius: 3px; background: #4F46E5; margin-top: auto; align-self: flex-end"></div></div>' +
         '<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span style="font-size: 14px; font-weight: 600; line-height: 1.35">' + s.doc.t + '</span>' +
-        '<span style="font-size: 13px; color: #667085; line-height: 1.4">' + s.doc.meta + '</span>' +
+        '<span style="font-size: 13px; color: var(--muted); line-height: 1.4">' + s.doc.meta + '</span>' +
         '<span class="num" style="font-size: 15px; font-weight: 600; margin-top: 4px">' + s.doc.amt + '</span>' +
-        '<span style="font-size: 13px; font-weight: 500; margin-top: 4px; color: #667085">Archivo de ejemplo</span></div></div></div>';
+        '<span style="font-size: 13px; font-weight: 500; margin-top: 4px; color: var(--muted)">Archivo de ejemplo</span></div></div></div>';
     } else {
-      d += '<div style="padding: 14px; border-radius: 12px; border: 1px dashed #D0D5DD; font-size: 13px; color: #667085">Cargo automático del banco: el respaldo es la propia cartola.</div>';
+      d += '<div style="padding: 14px; border-radius: 12px; border: 1px dashed var(--border-strong); font-size: 13px; color: var(--muted)">Cargo automático del banco: el respaldo es la propia cartola.</div>';
     }
     if (s.status === 'sugerido') {
       d += '<div style="display: flex; gap: 10px"><button type="button" class="btn-primary" style="flex: 1" data-action="accept" data-id="' + s.id + '">Aceptar coincidencia</button>' +
@@ -173,22 +173,22 @@
     }
     if (s.changed) {
       var note = s.status === 'conciliado' ? (s.id === 'r10' ? 'Registrado en el libro recién.' : 'Aceptaste esta coincidencia.') : 'Descartaste la sugerencia.';
-      d += '<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #F6F7F9">' +
-        '<span style="font-size: 13px; color: #475467">' + note + '</span>' +
+      d += '<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 12px; background: var(--bg)">' +
+        '<span style="font-size: 13px; color: var(--text-3)">' + note + '</span>' +
         '<button type="button" class="btn-secondary" style="height: 40px; font-size: 13px" data-action="undo" data-id="' + s.id + '">Deshacer</button></div>';
     } else if (s.status === 'conciliado') {
-      d += '<span style="font-size: 13px; color: #667085">Conciliado por ' + s.by + '</span>';
+      d += '<span style="font-size: 13px; color: var(--muted)">Conciliado por ' + s.by + '</span>';
     }
     document.getElementById('detail').innerHTML = d;
 
     document.getElementById('comments').innerHTML = s.comments
-      ? '<div style="display: flex; gap: 10px"><div style="width: 28px; height: 28px; flex: none; border-radius: 999px; background: #F2F4F7; color: #344054; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">CO</div>' +
-        '<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #667085"><span style="font-weight: 600; color: #101828">Comité</span> · 02-11 20:31</span>' +
-        '<span style="font-size: 14px; line-height: 1.5; color: #344054">¿Cuándo se cobra este cheque? Aparece en el libro pero no en la cartola.</span></div></div>' +
-        '<div style="display: flex; gap: 10px"><div style="width: 28px; height: 28px; flex: none; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">AD</div>' +
-        '<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #667085"><span style="font-weight: 600; color: #101828">Administración</span> · 03-11 09:05</span>' +
-        '<span style="font-size: 14px; line-height: 1.5; color: #344054">El proveedor lo cobra la primera semana de noviembre. Adjunté la factura.</span></div></div>'
-      : '<span style="font-size: 13px; color: #667085">Sin comentarios todavía.</span>';
+      ? '<div style="display: flex; gap: 10px"><div style="width: 28px; height: 28px; flex: none; border-radius: 999px; background: var(--subtle); color: var(--text-2); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">CO</div>' +
+        '<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: var(--muted)"><span style="font-weight: 600; color: var(--text)">Comité</span> · 02-11 20:31</span>' +
+        '<span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">¿Cuándo se cobra este cheque? Aparece en el libro pero no en la cartola.</span></div></div>' +
+        '<div style="display: flex; gap: 10px"><div style="width: 28px; height: 28px; flex: none; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">AD</div>' +
+        '<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: var(--muted)"><span style="font-weight: 600; color: var(--text)">Administración</span> · 03-11 09:05</span>' +
+        '<span style="font-size: 14px; line-height: 1.5; color: var(--text-2)">El proveedor lo cobra la primera semana de noviembre. Adjunté la factura.</span></div></div>'
+      : '<span style="font-size: 13px; color: var(--muted)">Sin comentarios todavía.</span>';
   }
 
   function setStatus(id, status) {

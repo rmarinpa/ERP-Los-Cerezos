@@ -6,39 +6,40 @@
 <title>Los Cerezos · Resumen del período</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
 <link rel="stylesheet" href="assets/styles.css">
+<script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('tema')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.setAttribute('data-theme',t)})();</script>
 </head>
 <body>
 <div class="demo-banner" role="note"><a href="index.html">← Inicio</a><span>Demo con datos de ejemplo: los montos no son las cuentas reales del Condominio Los Cerezos.</span></div>
-<div style="min-height: 100vh; background: #F6F7F9">
+<div style="min-height: 100vh; background: var(--bg)">
 
-<header style="background: #FFFFFF; border-bottom: 1px solid #E4E7EC">
+<header style="background: var(--surface); border-bottom: 1px solid var(--border)">
 <div style="max-width: 1360px; margin: 0 auto; padding: 12px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
 <div style="display: flex; align-items: center; gap: 12px">
-<div style="width: 34px; height: 34px; border-radius: 10px; background: #101828; display: flex; align-items: center; justify-content: center; color: #FFFFFF">
+<div style="width: 34px; height: 34px; border-radius: 10px; background: var(--ink); display: flex; align-items: center; justify-content: center; color: var(--on-ink)">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="12" r="5.5"></circle><circle cx="15" cy="12" r="5.5"></circle></svg>
 </div>
 <div style="display: flex; flex-direction: column">
 <span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em">Conciliador</span>
-<span style="font-size: 12px; color: #667085">Condominio Los Cerezos · 80 casas</span>
+<span style="font-size: 12px; color: var(--muted)">Condominio Los Cerezos · 80 casas</span>
 </div>
 </div>
 <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px; flex: 1 1 auto">
-<a href="resumen.html" aria-current="page" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: #F2F4F7; color: #101828; font-size: 14px; font-weight: 500">Resumen</a>
-<a href="conciliacion.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Conciliación</a>
-<a href="importar.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Importar</a>
-<a href="vecino.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Vista vecino</a>
-<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: #667085; font-size: 14px; font-weight: 500">Cierre</span>
-<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: #667085; font-size: 14px; font-weight: 500">Bitácora</span>
+<a href="resumen.html" aria-current="page" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: var(--subtle); color: var(--text); font-size: 14px; font-weight: 500">Resumen</a>
+<a href="conciliacion.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: var(--text-3); font-size: 14px; font-weight: 500">Conciliación</a>
+<a href="importar.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: var(--text-3); font-size: 14px; font-weight: 500">Importar</a>
+<a href="vecino.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: var(--text-3); font-size: 14px; font-weight: 500">Vista vecino</a>
+<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: var(--muted); font-size: 14px; font-weight: 500">Cierre</span>
+<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: var(--muted); font-size: 14px; font-weight: 500">Bitácora</span>
 </nav>
 <div style="display: flex; align-items: center; gap: 10px">
-<button type="button" style="display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid #E4E7EC; background: #FFFFFF; color: #101828; font-size: 14px; font-weight: 500; cursor: pointer">
+<button type="button" style="display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 14px; font-weight: 500; cursor: pointer">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg>
 Octubre 2026
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
 </button>
 <div style="display: flex; align-items: center; gap: 8px">
-<div style="width: 34px; height: 34px; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AD</div>
-<span style="font-size: 13px; color: #475467">Administración</span>
+<div style="width: 34px; height: 34px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AD</div>
+<span style="font-size: 13px; color: var(--text-3)">Administración</span>
 </div>
 </div>
 </div>
@@ -48,15 +49,15 @@ Octubre 2026
 
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; color: #667085">Octubre 2026 · Cuenta corriente ••• 4821</span>
+<span style="font-size: 13px; color: var(--muted)">Octubre 2026 · Cuenta corriente ••• 4821</span>
 <h1 style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -0.025em">Resumen del período</h1>
 </div>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
-<div role="group" aria-label="Cuenta bancaria" style="display: flex; background: #EAECF0; border-radius: 12px; padding: 3px">
-<button type="button" aria-pressed="true" style="height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: #FFFFFF; color: #101828; font-size: 14px; font-weight: 500; cursor: pointer">Cuenta corriente</button>
-<button type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: transparent; color: #475467; font-size: 14px; font-weight: 500; cursor: pointer">Fondo de reserva</button>
+<div role="group" aria-label="Cuenta bancaria" style="display: flex; background: var(--track); border-radius: 12px; padding: 3px">
+<button type="button" aria-pressed="true" style="height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: var(--surface); color: var(--text); font-size: 14px; font-weight: 500; cursor: pointer">Cuenta corriente</button>
+<button type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: transparent; color: var(--text-3); font-size: 14px; font-weight: 500; cursor: pointer">Fondo de reserva</button>
 </div>
-<a href="conciliacion.html" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 12px; background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500">
+<a href="conciliacion.html" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 20px; border-radius: 12px; background: #4F46E5; color: var(--on-ink); font-size: 14px; font-weight: 500">
 Ir a la mesa de conciliación
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
 </a>
@@ -64,96 +65,96 @@ Ir a la mesa de conciliación
 </div>
 
 <section aria-label="Indicadores" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
-<div style="background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-size: 13px; color: #475467; font-weight: 500">Saldo según banco</span>
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5H3z"></path><path d="M5 10v8"></path><path d="M9.5 10v8"></path><path d="M14.5 10v8"></path><path d="M19 10v8"></path><path d="M3 21h18"></path></svg>
+<span style="font-size: 13px; color: var(--text-3); font-weight: 500">Saldo según banco</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--muted)"><path d="m12 3 9 5H3z"></path><path d="M5 10v8"></path><path d="M9.5 10v8"></path><path d="M14.5 10v8"></path><path d="M19 10v8"></path><path d="M3 21h18"></path></svg>
 </div>
 <span class="num" style="font-size: 30px; font-weight: 600">$4.011.150</span>
-<span style="font-size: 13px; color: #667085">Cartola al 31-10 · importada el 01-11</span>
+<span style="font-size: 13px; color: var(--muted)">Cartola al 31-10 · importada el 01-11</span>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-size: 13px; color: #475467; font-weight: 500">Saldo según libro</span>
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6"></path><path d="M9 17h6"></path></svg>
+<span style="font-size: 13px; color: var(--text-3); font-weight: 500">Saldo según libro</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--muted)"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6"></path><path d="M9 17h6"></path></svg>
 </div>
 <span class="num" style="font-size: 30px; font-weight: 600">$3.344.480</span>
-<span style="font-size: 13px; color: #667085">Excel de la administración · 121 registros</span>
+<span style="font-size: 13px; color: var(--muted)">Excel de la administración · 121 registros</span>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-size: 13px; color: #475467; font-weight: 500">Diferencia</span>
-<span style="display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 8px; border-radius: 999px; background: #E3F4EF; color: #0E6E5C; font-size: 12px; font-weight: 500">
+<span style="font-size: 13px; color: var(--text-3); font-weight: 500">Diferencia</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 8px; border-radius: 999px; background: var(--ok-soft); color: var(--ok-text); font-size: 12px; font-weight: 500">
 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
 Explicada al 100%
 </span>
 </div>
 <span class="num" style="font-size: 30px; font-weight: 600">$666.670</span>
-<span style="font-size: 13px; color: #667085">4 partidas en tránsito la explican</span>
+<span style="font-size: 13px; color: var(--muted)">4 partidas en tránsito la explican</span>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; align-items: center; justify-content: space-between">
-<span style="font-size: 13px; color: #475467; font-weight: 500">Avance de conciliación</span>
-<span style="font-size: 12px; color: #475467">115 de 118</span>
+<span style="font-size: 13px; color: var(--text-3); font-weight: 500">Avance de conciliación</span>
+<span style="font-size: 12px; color: var(--text-3)">115 de 118</span>
 </div>
 <span class="num" style="font-size: 30px; font-weight: 600">97%</span>
-<div style="height: 8px; border-radius: 999px; background: #EAECF0; overflow: hidden">
+<div style="height: 8px; border-radius: 999px; background: var(--track); overflow: hidden">
 <div style="width: 97%; height: 8px; border-radius: 999px; background: #4F46E5"></div>
 </div>
-<span style="font-size: 13px; color: #667085">Movimientos del banco ya emparejados</span>
+<span style="font-size: 13px; color: var(--muted)">Movimientos del banco ya emparejados</span>
 </div>
 </section>
 
 <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
 
-<section aria-labelledby="puente-titulo" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<section aria-labelledby="puente-titulo" style="flex: 999 1 640px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
 <div style="display: flex; flex-direction: column; gap: 6px">
 <h2 id="puente-titulo" style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.015em">¿Por qué el banco muestra más plata que el libro?</h2>
-<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #475467">Las dos fuentes llegan al mismo saldo real cuando se consideran las partidas que todavía no pasan por el banco.</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: var(--text-3)">Las dos fuentes llegan al mismo saldo real cuando se consideran las partidas que todavía no pasan por el banco.</p>
 </div>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
-<div style="border: 1px solid #E4E7EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; background: #FCFCFD">
+<div style="border: 1px solid var(--border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; background: var(--surface-2)">
 <div style="display: flex; align-items: center; gap: 8px">
-<span style="width: 8px; height: 8px; border-radius: 999px; background: #101828"></span>
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #475467">Según banco</span>
+<span style="width: 8px; height: 8px; border-radius: 999px; background: var(--ink)"></span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-3)">Según banco</span>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
-<span style="font-size: 14px; color: #101828">Saldo en la cartola</span>
+<span style="font-size: 14px; color: var(--text)">Saldo en la cartola</span>
 <span class="num" style="font-size: 15px; font-weight: 500">$4.011.150</span>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
-<span style="font-size: 14px; color: #475467">Cheques girados aún no cobrados (2)</span>
-<span class="num" style="font-size: 15px; font-weight: 500; color: #B54708">−$740.000</span>
+<span style="font-size: 14px; color: var(--text-3)">Cheques girados aún no cobrados (2)</span>
+<span class="num" style="font-size: 15px; font-weight: 500; color: var(--warn-text)">−$740.000</span>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
-<span style="font-size: 14px; color: #475467">Depósito en tránsito · Casa 12</span>
-<span class="num" style="font-size: 15px; font-weight: 500; color: #0E6E5C">+$65.000</span>
+<span style="font-size: 14px; color: var(--text-3)">Depósito en tránsito · Casa 12</span>
+<span class="num" style="font-size: 15px; font-weight: 500; color: var(--ok-text)">+$65.000</span>
 </div>
-<div style="height: 1px; background: #E4E7EC"></div>
+<div style="height: 1px; background: var(--line)"></div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
 <span style="font-size: 14px; font-weight: 600">Saldo real</span>
 <span class="num" style="font-size: 18px; font-weight: 600">$3.336.150</span>
 </div>
 </div>
-<div style="border: 1px solid #E4E7EC; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; background: #FCFCFD">
+<div style="border: 1px solid var(--border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 14px; background: var(--surface-2)">
 <div style="display: flex; align-items: center; gap: 8px">
 <span style="width: 8px; height: 8px; border-radius: 999px; background: #4F46E5"></span>
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #475467">Según libro</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-3)">Según libro</span>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
-<span style="font-size: 14px; color: #101828">Saldo en el libro</span>
+<span style="font-size: 14px; color: var(--text)">Saldo en el libro</span>
 <span class="num" style="font-size: 15px; font-weight: 500">$3.344.480</span>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
-<span style="font-size: 14px; color: #475467">Comisión bancaria por registrar</span>
-<span class="num" style="font-size: 15px; font-weight: 500; color: #B54708">−$8.330</span>
+<span style="font-size: 14px; color: var(--text-3)">Comisión bancaria por registrar</span>
+<span class="num" style="font-size: 15px; font-weight: 500; color: var(--warn-text)">−$8.330</span>
 </div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline; visibility: hidden" aria-hidden="true">
 <span style="font-size: 14px">—</span>
 <span class="num" style="font-size: 15px">—</span>
 </div>
-<div style="height: 1px; background: #E4E7EC"></div>
+<div style="height: 1px; background: var(--line)"></div>
 <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
 <span style="font-size: 14px; font-weight: 600">Saldo real</span>
 <span class="num" style="font-size: 18px; font-weight: 600">$3.336.150</span>
@@ -161,175 +162,176 @@ Explicada al 100%
 </div>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 14px; background: #E3F4EF">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; border-radius: 14px; background: var(--ok-soft)">
 <div style="display: flex; align-items: center; gap: 12px">
-<div style="width: 32px; height: 32px; border-radius: 999px; background: #0E6E5C; color: #FFFFFF; display: flex; align-items: center; justify-content: center">
+<div style="width: 32px; height: 32px; border-radius: 999px; background: #0E6E5C; color: var(--on-ink); display: flex; align-items: center; justify-content: center">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 15px; font-weight: 600; color: #0B4F42">Banco y libro cuadran</span>
-<span style="font-size: 13px; color: #0E6E5C">Saldo real disponible al 31-10</span>
+<span style="font-size: 15px; font-weight: 600; color: var(--ok-strong)">Banco y libro cuadran</span>
+<span style="font-size: 13px; color: var(--ok-text)">Saldo real disponible al 31-10</span>
 </div>
 </div>
-<span class="num" style="font-size: 24px; font-weight: 600; color: #0B4F42">$3.336.150</span>
+<span class="num" style="font-size: 24px; font-weight: 600; color: var(--ok-strong)">$3.336.150</span>
 </div>
 
-<div style="display: flex; gap: 12px; padding: 16px 18px; border-radius: 14px; background: #F6F7F9">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#475467" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>
-<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #344054">Los cheques N° 00318 (jardinería, $420.000) y N° 00319 (mantención del portón, $320.000) se giraron el 28 y 29 de octubre. Mientras los proveedores no los cobren, el banco sigue mostrando esa plata. Cuando se cobren y se abone el depósito de la Casa 12, el banco va a mostrar el mismo saldo real.</p>
+<div style="display: flex; gap: 12px; padding: 16px 18px; border-radius: 14px; background: var(--bg)">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--text-3); flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: var(--text-2)">Los cheques N° 00318 (jardinería, $420.000) y N° 00319 (mantención del portón, $320.000) se giraron el 28 y 29 de octubre. Mientras los proveedores no los cobren, el banco sigue mostrando esa plata. Cuando se cobren y se abone el depósito de la Casa 12, el banco va a mostrar el mismo saldo real.</p>
 </div>
 </section>
 
-<aside aria-labelledby="cierre-titulo" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<aside aria-labelledby="cierre-titulo" style="flex: 1 1 320px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
 <h2 id="cierre-titulo" style="margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Estado del cierre</h2>
 <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0">
 <li style="display: flex; gap: 14px">
 <div style="display: flex; flex-direction: column; align-items: center">
-<div style="width: 26px; height: 26px; border-radius: 999px; background: #0E6E5C; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="width: 26px; height: 26px; border-radius: 999px; background: #0E6E5C; color: var(--on-ink); display: flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>
 <div style="width: 2px; height: 30px; background: #0E6E5C"></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px; padding-top: 3px">
 <span style="font-size: 14px; font-weight: 500">Cartola importada</span>
-<span style="font-size: 13px; color: #667085">01-11 · 118 movimientos</span>
+<span style="font-size: 13px; color: var(--muted)">01-11 · 118 movimientos</span>
 </div>
 </li>
 <li style="display: flex; gap: 14px">
 <div style="display: flex; flex-direction: column; align-items: center">
-<div style="width: 26px; height: 26px; border-radius: 999px; background: #0E6E5C; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="width: 26px; height: 26px; border-radius: 999px; background: #0E6E5C; color: var(--on-ink); display: flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>
 <div style="width: 2px; height: 30px; background: #0E6E5C"></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px; padding-top: 3px">
 <span style="font-size: 14px; font-weight: 500">Libro importado</span>
-<span style="font-size: 13px; color: #667085">01-11 · 121 registros</span>
+<span style="font-size: 13px; color: var(--muted)">01-11 · 121 registros</span>
 </div>
 </li>
 <li style="display: flex; gap: 14px">
 <div style="display: flex; flex-direction: column; align-items: center">
-<div style="width: 26px; height: 26px; border-radius: 999px; background: #EEF0FF; border: 2px solid #4F46E5; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><div style="width: 8px; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
-<div style="width: 2px; height: 30px; background: #EAECF0"></div>
+<div style="width: 26px; height: 26px; border-radius: 999px; background: var(--accent-soft); border: 2px solid #4F46E5; box-sizing: border-box; display: flex; align-items: center; justify-content: center"><div style="width: 8px; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
+<div style="width: 2px; height: 30px; background: var(--track)"></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px; padding-top: 3px">
-<span style="font-size: 14px; font-weight: 500; color: #3730A3">Conciliación en curso</span>
-<span style="font-size: 13px; color: #667085">97% · 3 partidas por revisar</span>
+<span style="font-size: 14px; font-weight: 500; color: var(--accent-strong)">Conciliación en curso</span>
+<span style="font-size: 13px; color: var(--muted)">97% · 3 partidas por revisar</span>
 </div>
 </li>
 <li style="display: flex; gap: 14px">
 <div style="display: flex; flex-direction: column; align-items: center">
-<div style="width: 26px; height: 26px; border-radius: 999px; border: 2px solid #D0D5DD; box-sizing: border-box"></div>
-<div style="width: 2px; height: 30px; background: #EAECF0"></div>
+<div style="width: 26px; height: 26px; border-radius: 999px; border: 2px solid var(--border-strong); box-sizing: border-box"></div>
+<div style="width: 2px; height: 30px; background: var(--track)"></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px; padding-top: 3px">
-<span style="font-size: 14px; font-weight: 500; color: #475467">Revisión del comité</span>
-<span style="font-size: 13px; color: #667085">Pendiente</span>
+<span style="font-size: 14px; font-weight: 500; color: var(--text-3)">Revisión del comité</span>
+<span style="font-size: 13px; color: var(--muted)">Pendiente</span>
 </div>
 </li>
 <li style="display: flex; gap: 14px">
 <div style="display: flex; flex-direction: column; align-items: center">
-<div style="width: 26px; height: 26px; border-radius: 999px; border: 2px solid #D0D5DD; box-sizing: border-box"></div>
+<div style="width: 26px; height: 26px; border-radius: 999px; border: 2px solid var(--border-strong); box-sizing: border-box"></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px; padding-top: 3px">
-<span style="font-size: 14px; font-weight: 500; color: #475467">Publicación a vecinos</span>
-<span style="font-size: 13px; color: #667085">Pendiente</span>
+<span style="font-size: 14px; font-weight: 500; color: var(--text-3)">Publicación a vecinos</span>
+<span style="font-size: 13px; color: var(--muted)">Pendiente</span>
 </div>
 </li>
 </ol>
 <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px">
-<button type="button" disabled="disabled" style="height: 46px; border-radius: 12px; border: 1px solid #E4E7EC; background: #F2F4F7; color: #667085; font-size: 14px; font-weight: 500; cursor: not-allowed">Enviar a revisión del comité</button>
-<span style="font-size: 12px; color: #667085; text-align: center">Se habilita al llegar al 100% conciliado</span>
+<button type="button" disabled="disabled" style="height: 46px; border-radius: 12px; border: 1px solid var(--border); background: var(--subtle); color: var(--muted); font-size: 14px; font-weight: 500; cursor: not-allowed">Enviar a revisión del comité</button>
+<span style="font-size: 12px; color: var(--muted); text-align: center">Se habilita al llegar al 100% conciliado</span>
 </div>
 </aside>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
 
-<section aria-labelledby="partidas-titulo" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; overflow: hidden">
+<section aria-labelledby="partidas-titulo" style="flex: 999 1 640px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden">
 <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 24px 16px">
 <div style="display: flex; flex-direction: column; gap: 4px">
 <h2 id="partidas-titulo" style="margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Partidas abiertas</h2>
-<span style="font-size: 13px; color: #667085">Lo que aún no calza entre banco y libro</span>
+<span style="font-size: 13px; color: var(--muted)">Lo que aún no calza entre banco y libro</span>
 </div>
 <a href="conciliacion.html" style="font-size: 14px; font-weight: 500">Ver todas en la mesa →</a>
 </div>
 <div style="overflow-x: auto">
 <div style="min-width: 640px">
-<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 10px 24px; background: #F9FAFB; border-top: 1px solid #EAECF0; border-bottom: 1px solid #EAECF0; font-size: 12px; font-weight: 500; color: #475467">
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 10px 24px; background: var(--surface-3); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); font-size: 12px; font-weight: 500; color: var(--text-3)">
 <span>Estado</span><span>Detalle</span><span>Fecha</span><span style="text-align: right">Monto</span>
 </div>
-<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #F2F4F7; align-items: center">
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #EEF1F5; color: #344054; font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>En tránsito</span>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Cheque N° 00318 · Jardinería</span><span style="font-size: 13px; color: #667085">En el libro, aún no cobrado en el banco</span></div>
-<span style="font-size: 13px; color: #475467">Girado el 28-10</span>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--border-faint); align-items: center">
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--transit-bg); color: var(--text-2); font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>En tránsito</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Cheque N° 00318 · Jardinería</span><span style="font-size: 13px; color: var(--muted)">En el libro, aún no cobrado en el banco</span></div>
+<span style="font-size: 13px; color: var(--text-3)">Girado el 28-10</span>
 <span class="num" style="font-size: 14px; font-weight: 500; text-align: right">−$420.000</span>
 </div>
-<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #F2F4F7; align-items: center">
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #EEF1F5; color: #344054; font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>En tránsito</span>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Cheque N° 00319 · Mantención portón</span><span style="font-size: 13px; color: #667085">En el libro, aún no cobrado en el banco</span></div>
-<span style="font-size: 13px; color: #475467">Girado el 29-10</span>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--border-faint); align-items: center">
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--transit-bg); color: var(--text-2); font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>En tránsito</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Cheque N° 00319 · Mantención portón</span><span style="font-size: 13px; color: var(--muted)">En el libro, aún no cobrado en el banco</span></div>
+<span style="font-size: 13px; color: var(--text-3)">Girado el 29-10</span>
 <span class="num" style="font-size: 14px; font-weight: 500; text-align: right">−$320.000</span>
 </div>
-<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #F2F4F7; align-items: center">
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #EEF1F5; color: #344054; font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>En tránsito</span>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Depósito gasto común · Casa 12</span><span style="font-size: 13px; color: #667085">Registrado el 31-10, el banco lo abonó el 02-11</span></div>
-<span style="font-size: 13px; color: #475467">31-10</span>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--border-faint); align-items: center">
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--transit-bg); color: var(--text-2); font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>En tránsito</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Depósito gasto común · Casa 12</span><span style="font-size: 13px; color: var(--muted)">Registrado el 31-10, el banco lo abonó el 02-11</span></div>
+<span style="font-size: 13px; color: var(--text-3)">31-10</span>
 <span class="num" style="font-size: 14px; font-weight: 500; text-align: right">+$65.000</span>
 </div>
-<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #F2F4F7; align-items: center">
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #FEF0E1; color: #9C3D06; font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>Por conciliar</span>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Comisión mantención de cuenta</span><span style="font-size: 13px; color: #667085">Cargo del banco que no está en el libro</span></div>
-<span style="font-size: 13px; color: #475467">31-10</span>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--border-faint); align-items: center">
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--warn-soft); color: var(--warn-strong); font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>Por conciliar</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Comisión mantención de cuenta</span><span style="font-size: 13px; color: var(--muted)">Cargo del banco que no está en el libro</span></div>
+<span style="font-size: 13px; color: var(--text-3)">31-10</span>
 <span class="num" style="font-size: 14px; font-weight: 500; text-align: right">−$8.330</span>
 </div>
-<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #F2F4F7; align-items: center">
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #EEF0FF; color: #3730A3; font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg>Sugerido</span>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Transferencia M. Soto → Casa 34</span><span style="font-size: 13px; color: #667085">Coincidencia 92% · falta confirmar</span></div>
-<span style="font-size: 13px; color: #475467">08-10</span>
+<div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; border-bottom: 1px solid var(--border-faint); align-items: center">
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg>Sugerido</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Transferencia M. Soto → Casa 34</span><span style="font-size: 13px; color: var(--muted)">Coincidencia 92% · falta confirmar</span></div>
+<span style="font-size: 13px; color: var(--text-3)">08-10</span>
 <span class="num" style="font-size: 14px; font-weight: 500; text-align: right">+$65.000</span>
 </div>
 <div style="display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px 130px; gap: 16px; padding: 14px 24px; align-items: center">
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #EEF0FF; color: #3730A3; font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg>Sugerido</span>
-<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Mantención piscina · Factura 1182</span><span style="font-size: 13px; color: #667085">Coincidencia 88% · fecha a 1 día</span></div>
-<span style="font-size: 13px; color: #475467">10-10</span>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 12px; font-weight: 500"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg>Sugerido</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 500">Mantención piscina · Factura 1182</span><span style="font-size: 13px; color: var(--muted)">Coincidencia 88% · fecha a 1 día</span></div>
+<span style="font-size: 13px; color: var(--text-3)">10-10</span>
 <span class="num" style="font-size: 14px; font-weight: 500; text-align: right">−$180.000</span>
 </div>
 </div>
 </div>
 </section>
 
-<aside aria-labelledby="actividad-titulo" style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<aside aria-labelledby="actividad-titulo" style="flex: 1 1 320px; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
 <h2 id="actividad-titulo" style="margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em">Actividad reciente</h2>
 <div style="display: flex; gap: 12px">
-<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #F2F4F7; color: #344054; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">CO</div>
+<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: var(--subtle); color: var(--text-2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">CO</div>
 <div style="display: flex; flex-direction: column; gap: 2px">
 <span style="font-size: 14px; line-height: 1.45"><span style="font-weight: 500">Comité</span> comentó en Cheque N° 00318</span>
-<span style="font-size: 12px; color: #667085">02-11 · 20:31</span>
+<span style="font-size: 12px; color: var(--muted)">02-11 · 20:31</span>
 </div>
 </div>
 <div style="display: flex; gap: 12px">
-<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg></div>
+<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg></div>
 <div style="display: flex; flex-direction: column; gap: 2px">
 <span style="font-size: 14px; line-height: 1.45"><span style="font-weight: 500">Sistema</span> concilió 113 movimientos y sugirió 2</span>
-<span style="font-size: 12px; color: #667085">01-11 · 09:15</span>
+<span style="font-size: 12px; color: var(--muted)">01-11 · 09:15</span>
 </div>
 </div>
 <div style="display: flex; gap: 12px">
-<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">AD</div>
+<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">AD</div>
 <div style="display: flex; flex-direction: column; gap: 2px">
 <span style="font-size: 14px; line-height: 1.45"><span style="font-weight: 500">Administración</span> importó la cartola de octubre</span>
-<span style="font-size: 12px; color: #667085">01-11 · 09:14</span>
+<span style="font-size: 12px; color: var(--muted)">01-11 · 09:14</span>
 </div>
 </div>
 <div style="display: flex; gap: 12px">
-<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">AD</div>
+<div style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">AD</div>
 <div style="display: flex; flex-direction: column; gap: 2px">
 <span style="font-size: 14px; line-height: 1.45"><span style="font-weight: 500">Administración</span> importó el libro de octubre</span>
-<span style="font-size: 12px; color: #667085">01-11 · 09:12</span>
+<span style="font-size: 12px; color: var(--muted)">01-11 · 09:12</span>
 </div>
 </div>
-<span style="font-size: 14px; font-weight: 500; color: #667085">Bitácora completa (próximamente)</span>
+<span style="font-size: 14px; font-weight: 500; color: var(--muted)">Bitácora completa (próximamente)</span>
 </aside>
 </div>
 
 </main>
 </div>
+<script src="assets/theme.js"></script>
 </body>
 </html>
