@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Condominio Los Cerezos · Conciliador (demo)</title>
+<meta name="description" content="Demo del módulo de conciliación del sistema del Condominio Los Cerezos, con datos de ejemplo.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+.card { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; color: #101828; transition: border-color 0.15s ease, transform 0.15s ease; }
+.card:hover { border-color: #4F46E5; color: #101828; transform: translateY(-2px); }
+.card:focus-visible { outline: 2px solid #4F46E5; outline-offset: 2px; }
+.icon { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.tag { align-self: flex-start; display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 999px; font-size: 12px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="demo-banner" role="note"><span>Demo con datos de ejemplo: los montos no son las cuentas reales del Condominio Los Cerezos.</span></div>
+
+<main style="max-width: 960px; margin: 0 auto; padding: 48px 20px 64px; display: flex; flex-direction: column; gap: 32px">
+
+<header style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="width: 40px; height: 40px; border-radius: 12px; background: #101828; display: flex; align-items: center; justify-content: center; color: #FFFFFF">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="12" r="5.5"></circle><circle cx="15" cy="12" r="5.5"></circle></svg>
+</div>
+<span style="font-size: 14px; color: #475467">Condominio Los Cerezos</span>
+</div>
+<h1 style="margin: 0; font-size: clamp(30px, 5vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1">Conciliador: cada peso de la cuenta, a la vista</h1>
+<p style="margin: 0; max-width: 680px; font-size: 17px; line-height: 1.6; color: #475467">Es el primer módulo del sistema del condominio. Compara la cartola del banco con el libro que lleva la administración, muestra qué calza y explica lo que todavía no, con el comprobante de cada gasto.</p>
+</header>
+
+<section aria-label="Pantallas de la demo" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+
+<a class="card" href="vecino.html">
+<div class="icon" style="background: #E3F4EF; color: #0E6E5C"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></div>
+<span class="tag" style="background: #E3F4EF; color: #0B5F50">Para vecinos · celular</span>
+<span style="font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Vista vecino</span>
+<span style="font-size: 14px; line-height: 1.5; color: #475467">Saldo real, en qué se gastó y cada gasto con su respaldo.</span>
+</a>
+
+<a class="card" href="resumen.html">
+<div class="icon" style="background: #EEF0FF; color: #3730A3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg></div>
+<span class="tag" style="background: #EEF0FF; color: #3730A3">Administración y comité</span>
+<span style="font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Resumen del período</span>
+<span style="font-size: 14px; line-height: 1.5; color: #475467">Por qué el banco y el libro pueden mostrar saldos distintos, y cómo cuadran.</span>
+</a>
+
+<a class="card" href="conciliacion.html">
+<div class="icon" style="background: #EEF0FF; color: #3730A3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="12" r="5.5"></circle><circle cx="15" cy="12" r="5.5"></circle></svg></div>
+<span class="tag" style="background: #FEF0E1; color: #9C3D06">Interactiva</span>
+<span style="font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Mesa de conciliación</span>
+<span style="font-size: 14px; line-height: 1.5; color: #475467">Banco y libro lado a lado. Prueba aceptar sugerencias hasta llegar al 100%.</span>
+</a>
+
+<a class="card" href="importar.html">
+<div class="icon" style="background: #F2F4F7; color: #344054"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"></path><path d="m6 10 6-6 6 6"></path><path d="M4 20h16"></path></svg></div>
+<span class="tag" style="background: #F2F4F7; color: #344054">Administración</span>
+<span style="font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Importar cartola</span>
+<span style="font-size: 14px; line-height: 1.5; color: #475467">Subir el Excel del banco o de la administración, con validaciones automáticas.</span>
+</a>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">Cómo funciona</h2>
+<ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55; color: #344054">
+<li>La administración sube la cartola del banco y su Excel de ingresos y egresos, tal como lo lleva hoy.</li>
+<li>El sistema empareja los movimientos y deja a la vista lo que no calza, como cheques que aún no se cobran.</li>
+<li>El comité revisa y aprueba el cierre del mes, y los vecinos ven el resultado con los comprobantes.</li>
+</ol>
+</section>
+
+<p style="margin: 0; font-size: 13px; color: #667085">Prototipo en desarrollo. Todas las cifras, nombres y documentos son de ejemplo.</p>
+</main>
+</body>
+</html>

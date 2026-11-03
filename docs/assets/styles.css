@@ -1,0 +1,112 @@
+/* Estilos base compartidos por todas las pantallas de la demo */
+body {
+  margin: 0;
+  background: #F6F7F9;
+  color: #101828;
+  font-family: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.num {
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+a { color: #4F46E5; text-decoration: none; }
+a:hover { color: #3730A3; }
+button, select, input, textarea { font-family: inherit; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Aviso de demo: visible en todas las páginas */
+.demo-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 16px;
+  padding: 10px 16px;
+  background: #FEF0E1;
+  color: #7A2E05;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+}
+.demo-banner a { color: #7A2E05; font-weight: 600; }
+.demo-banner a:hover { color: #4A1B03; }
+
+/* ---------- Mesa de conciliación ---------- */
+.filter {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 42px; padding: 0 14px; border-radius: 12px;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  border: 1px solid #E4E7EC; background: #FFFFFF; color: #344054;
+}
+.filter .count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
+  font-size: 12px; background: #F2F4F7; color: #475467;
+}
+.filter.on { border-color: #101828; background: #101828; color: #FFFFFF; }
+.filter.on .count { background: rgba(255,255,255,0.18); color: #FFFFFF; }
+
+.mov-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+.mov-row {
+  width: 100%; padding: 14px 20px; border: 0; border-bottom: 1px solid #F2F4F7;
+  text-align: left; cursor: pointer; background: #FFFFFF; color: inherit;
+}
+.mov-row:hover { background: #FAFAFF; }
+.mov-row.sel { background: #F4F5FF; }
+.mov-row:focus-visible { outline: 2px solid #4F46E5; outline-offset: -2px; }
+.side {
+  display: grid; grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: 10px; align-items: center; min-width: 0;
+}
+.side .f { font-size: 12px; color: #667085; }
+.side .g { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.side .m { font-size: 14px; font-weight: 500; color: #101828; }
+.ghost {
+  display: flex; align-items: center; height: 36px; padding: 0 12px;
+  border-radius: 10px; border: 1px dashed #D0D5DD; font-size: 13px; color: #667085;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px;
+  border-radius: 999px; font-size: 12px; font-weight: 500; white-space: nowrap;
+}
+.chip .dot { width: 7px; height: 7px; border-radius: 999px; }
+.chip-conciliado { background: #E3F4EF; color: #0B5F50; }
+.chip-conciliado .dot { background: #0E6E5C; }
+.chip-sugerido { background: #EEF0FF; color: #3730A3; }
+.chip-sugerido .dot { background: #4F46E5; }
+.chip-transito { background: #EEF1F5; color: #344054; }
+.chip-transito .dot { background: #667085; }
+.chip-pendiente { background: #FEF0E1; color: #9C3D06; }
+.chip-pendiente .dot { background: #DC6803; }
+
+.btn-primary {
+  height: 46px; padding: 0 18px; border-radius: 12px; border: 0;
+  background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-primary:hover { background: #4338CA; color: #FFFFFF; }
+.btn-dark { background: #101828; }
+.btn-dark:hover { background: #1D2939; }
+.btn-secondary {
+  height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid #D0D5DD;
+  background: #FFFFFF; color: #344054; font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.btn-disabled {
+  height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid #E4E7EC;
+  background: #F2F4F7; color: #667085; font-size: 14px; font-weight: 500; cursor: not-allowed;
+}

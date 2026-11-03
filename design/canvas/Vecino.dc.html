@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Conciliador · Vista vecino</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F7F9;color:#101828;font-family:'Geist','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.num{font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+a{color:#4F46E5;text-decoration:none}a:hover{color:#3730A3}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 1680px; box-sizing: border-box; background: #F6F7F9; overflow: hidden; display: flex; flex-direction: column">
+
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="width: 34px; height: 34px; border-radius: 10px; background: #101828; display: flex; align-items: center; justify-content: center; color: #FFFFFF">
+<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="12" r="5.5"></circle><circle cx="15" cy="12" r="5.5"></circle></svg>
+</div>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em">Cuentas claras</span>
+<span style="font-size: 12px; color: #667085">Condominio Los Cerezos</span>
+</div>
+</div>
+<button type="button" aria-label="Cambiar mes" style="display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 14px; border-radius: 12px; border: 1px solid #E4E7EC; background: #FFFFFF; color: #101828; font-size: 14px; font-weight: 500">
+Oct 2026
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+</header>
+
+<main style="padding: 4px 16px 32px; display: flex; flex-direction: column; gap: 14px">
+
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 14px; background: #EEF0FF">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3730A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<span style="font-size: 13px; line-height: 1.45; color: #3730A3">Octubre está en revisión (97% conciliado). Las cifras pueden ajustarse hasta que el comité apruebe el cierre.</span>
+</div>
+
+<section aria-label="Saldo real" style="border-radius: 22px; background: #101828; color: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #D0D5DD">Saldo real disponible</span>
+<span class="num" style="font-size: 38px; font-weight: 600; letter-spacing: -0.03em">$3.336.150</span>
+<span style="font-size: 13px; color: #D0D5DD">Cuenta corriente · al 31-10-2026</span>
+<div style="display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.14)">
+<span style="width: 20px; height: 20px; border-radius: 999px; background: #3CCB9F; color: #0B2E26; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<span style="font-size: 13px; color: #FFFFFF">Banco y libro de la administración cuadran</span>
+</div>
+</section>
+
+<section aria-labelledby="porque-titulo" style="border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+<h2 id="porque-titulo" style="margin: 0; font-size: 15px; font-weight: 600; line-height: 1.35">¿Por qué la cartola dice $4.011.150?</h2>
+<div style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px"><span style="color: #344054">Saldo en la cartola</span><span class="num" style="font-weight: 500">$4.011.150</span></div>
+<div style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px"><span style="color: #344054">2 cheques aún por cobrar</span><span class="num" style="font-weight: 500; color: #B54708">−$740.000</span></div>
+<div style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px"><span style="color: #344054">Depósito que llegó el 02-11</span><span class="num" style="font-weight: 500; color: #0E6E5C">+$65.000</span></div>
+<div style="height: 1px; background: #EAECF0"></div>
+<div style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px"><span style="font-weight: 600">Saldo real</span><span class="num" style="font-weight: 600">$3.336.150</span></div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #667085">Los cheques ya se entregaron a los proveedores; el banco los descuenta cuando los cobran.</p>
+</section>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #475467">Recaudado</span>
+<span class="num" style="font-size: 20px; font-weight: 600">$4.800.000</span>
+<span style="font-size: 12px; color: #667085">72 de 80 casas pagaron</span>
+</div>
+<div style="border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #475467">Gastado</span>
+<span class="num" style="font-size: 20px; font-weight: 600">$4.635.920</span>
+<span style="font-size: 12px; color: #667085">34 gastos, todos con respaldo</span>
+</div>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; color: #475467">Fondo de reserva</span>
+<span class="num" style="font-size: 20px; font-weight: 600">$6.482.300</span>
+</div>
+<span class="num" style="display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border-radius: 999px; background: #E3F4EF; color: #0B5F50; font-size: 12px; font-weight: 500">+$260.000 en oct</span>
+</div>
+
+<section aria-labelledby="cat-titulo" style="border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+<h2 id="cat-titulo" style="margin: 0; font-size: 15px; font-weight: 600">¿En qué se gastó?</h2>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: #344054">Remuneraciones</span><span class="num" style="color: #101828">$2.310.000 · 50%</span></div>
+<div style="height: 8px; border-radius: 999px; background: #F2F4F7"><div style="width: 100%; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: #344054">Mantención</span><span class="num" style="color: #101828">$920.000 · 20%</span></div>
+<div style="height: 8px; border-radius: 999px; background: #F2F4F7"><div style="width: 40%; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: #344054">Administración</span><span class="num" style="color: #101828">$650.000 · 14%</span></div>
+<div style="height: 8px; border-radius: 999px; background: #F2F4F7"><div style="width: 28%; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: #344054">Servicios básicos</span><span class="num" style="color: #101828">$612.400 · 13%</span></div>
+<div style="height: 8px; border-radius: 999px; background: #F2F4F7"><div style="width: 26.5%; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span style="color: #344054">Reparaciones</span><span class="num" style="color: #101828">$143.520 · 3%</span></div>
+<div style="height: 8px; border-radius: 999px; background: #F2F4F7"><div style="width: 6.2%; height: 8px; border-radius: 999px; background: #4F46E5"></div></div>
+</div>
+</section>
+
+<section aria-labelledby="gastos-titulo" style="border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 8px 0; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 18px 6px">
+<h2 id="gastos-titulo" style="margin: 0; font-size: 15px; font-weight: 600">Gastos del mes</h2>
+<span style="font-size: 12px; color: #667085">con comprobante</span>
+</div>
+<a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 44px; color: #101828">
+<span style="width: 38px; height: 38px; flex: none; border-radius: 12px; background: #F2F4F7; display: flex; align-items: center; justify-content: center; color: #344054"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0"><span style="font-size: 14px; font-weight: 500">Remuneraciones</span><span style="font-size: 12px; color: #667085">30-10 · 3 liquidaciones</span></span>
+<span class="num" style="font-size: 14px; font-weight: 500">$2.310.000</span>
+</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 44px; color: #101828">
+<span style="width: 38px; height: 38px; flex: none; border-radius: 12px; background: #F2F4F7; display: flex; align-items: center; justify-content: center; color: #344054"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0"><span style="font-size: 14px; font-weight: 500">Jardinería</span><span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #667085">Cheque 00318 <span style="display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border-radius: 999px; background: #EEF1F5; color: #344054; font-size: 11px; font-weight: 500">Por cobrar</span></span></span>
+<span class="num" style="font-size: 14px; font-weight: 500">$420.000</span>
+</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 44px; color: #101828">
+<span style="width: 38px; height: 38px; flex: none; border-radius: 12px; background: #F2F4F7; display: flex; align-items: center; justify-content: center; color: #344054"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0"><span style="font-size: 14px; font-weight: 500">Mantención portón</span><span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #667085">Cheque 00319 <span style="display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border-radius: 999px; background: #EEF1F5; color: #344054; font-size: 11px; font-weight: 500">Por cobrar</span></span></span>
+<span class="num" style="font-size: 14px; font-weight: 500">$320.000</span>
+</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 44px; color: #101828">
+<span style="width: 38px; height: 38px; flex: none; border-radius: 12px; background: #F2F4F7; display: flex; align-items: center; justify-content: center; color: #344054"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0"><span style="font-size: 14px; font-weight: 500">Luz áreas comunes</span><span style="font-size: 12px; color: #667085">05-10 · Boleta</span></span>
+<span class="num" style="font-size: 14px; font-weight: 500">$412.180</span>
+</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 44px; color: #101828">
+<span style="width: 38px; height: 38px; flex: none; border-radius: 12px; background: #F2F4F7; display: flex; align-items: center; justify-content: center; color: #344054"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0"><span style="font-size: 14px; font-weight: 500">Agua áreas comunes</span><span style="font-size: 12px; color: #667085">05-10 · Boleta</span></span>
+<span class="num" style="font-size: 14px; font-weight: 500">$200.220</span>
+</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 44px; color: #101828">
+<span style="width: 38px; height: 38px; flex: none; border-radius: 12px; background: #F2F4F7; display: flex; align-items: center; justify-content: center; color: #344054"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0"><span style="font-size: 14px; font-weight: 500">Mantención piscina</span><span style="font-size: 12px; color: #667085">09-10 · Factura 1182</span></span>
+<span class="num" style="font-size: 14px; font-weight: 500">$180.000</span>
+</a>
+<a href="#" style="display: flex; align-items: center; justify-content: center; height: 48px; margin: 4px 18px 8px; border-radius: 12px; background: #F6F7F9; font-size: 14px; font-weight: 500">Ver los 34 gastos</a>
+</section>
+
+<section style="border-radius: 18px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 15px; font-weight: 600">¿Tienes una duda sobre un gasto?</span>
+<span style="font-size: 13px; line-height: 1.5; color: #475467">Deja tu pregunta en el gasto y el comité la ve junto con su comprobante.</span>
+<button type="button" style="height: 48px; border-radius: 12px; border: 0; background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500">Preguntar al comité</button>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1680}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Conciliador · Mesa de conciliación</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F6F7F9;color:#101828;font-family:'Geist','Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+.num{font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+a{color:#4F46E5;text-decoration:none}a:hover{color:#3730A3}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F6F7F9">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #E4E7EC">
+<div style="max-width: 1360px; margin: 0 auto; padding: 12px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="width: 34px; height: 34px; border-radius: 10px; background: #101828; display: flex; align-items: center; justify-content: center; color: #FFFFFF">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="12" r="5.5"></circle><circle cx="15" cy="12" r="5.5"></circle></svg>
+</div>
+<div style="display: flex; flex-direction: column">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: -0.01em">Conciliador</span>
+<span style="font-size: 12px; color: #667085">Condominio Los Cerezos · 80 casas</span>
+</div>
+</div>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px; flex: 1 1 auto">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Resumen</a>
+<a href="Conciliacion.dc.html" aria-current="page" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; background: #F2F4F7; color: #101828; font-size: 14px; font-weight: 500">Conciliación</a>
+<a href="Importar.dc.html" style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 10px; color: #475467; font-size: 14px; font-weight: 500">Importar</a>
+<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: #667085; font-size: 14px; font-weight: 500">Cierre</span>
+<span style="display: inline-flex; align-items: center; height: 40px; padding: 0 14px; color: #667085; font-size: 14px; font-weight: 500">Bitácora</span>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<button type="button" style="display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid #E4E7EC; background: #FFFFFF; color: #101828; font-size: 14px; font-weight: 500; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg>
+Octubre 2026
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+</button>
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="width: 34px; height: 34px; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AD</div>
+<span style="font-size: 13px; color: #475467">Administración</span>
+</div>
+</div>
+</div>
+</header>
+
+<main style="max-width: 1360px; margin: 0 auto; padding: 32px 32px 64px; display: flex; flex-direction: column; gap: 20px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #667085">Cuenta corriente ••• 4821 · Octubre 2026 · 118 movimientos del banco · 121 registros del libro</span>
+<h1 style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -0.025em">Mesa de conciliación</h1>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px; min-width: 220px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<span style="font-size: 14px; font-weight: 600"><span class="num">{{pct}}%</span> conciliado</span>
+<span style="font-size: 12px; color: #667085"><span class="num">{{conc}}</span> de 118</span>
+</div>
+<div style="height: 8px; border-radius: 999px; background: #EAECF0; overflow: hidden">
+<div style="{{barStyle}}"></div>
+</div>
+</div>
+<sc-if value="{{hasSug}}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{applyAll}}" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border-radius: 12px; border: 0; background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500; cursor: pointer">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4"></path><path d="M12 17v4"></path><path d="M3 12h4"></path><path d="M17 12h4"></path></svg>
+<span>Aceptar sugerencias (<span class="num">{{sugCount}}</span>)</span>
+</button>
+</sc-if>
+<sc-if value="{{allDone}}" hint-placeholder-val="{{ false }}">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border-radius: 12px; background: #101828; color: #FFFFFF; font-size: 14px; font-weight: 500">
+Enviar a revisión del comité
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+</a>
+</sc-if>
+<sc-if value="{{notDone}}" hint-placeholder-val="{{ true }}">
+<button type="button" disabled="disabled" style="height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid #E4E7EC; background: #F2F4F7; color: #667085; font-size: 14px; font-weight: 500; cursor: not-allowed">Faltan <span class="num">{{pending}}</span> por resolver</button>
+</sc-if>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<div role="group" aria-label="Filtrar por estado" style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}">{{f.label}} <span class="num" style="{{f.countStyle}}">{{f.count}}</span></button>
+</sc-for>
+</div>
+<label style="display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 12px; border: 1px solid #E4E7EC; background: #FFFFFF; min-width: 260px; color: #667085">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Buscar movimiento</span>
+<input type="search" placeholder="Buscar glosa, casa o monto" style="border: 0; outline: none; background: transparent; font-family: inherit; font-size: 14px; color: #101828; flex: 1; min-width: 0">
+</label>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+<section aria-label="Movimientos" style="flex: 999 1 640px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; overflow: hidden">
+<div style="overflow-x: auto">
+<div style="min-width: 820px">
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 170px minmax(0, 1fr); gap: 16px; padding: 12px 20px; background: #F9FAFB; border-bottom: 1px solid #EAECF0; font-size: 12px; font-weight: 500; color: #475467">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 999px; background: #101828"></span>Banco (cartola)</span>
+<span style="text-align: center">Estado</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 999px; background: #4F46E5"></span>Libro (administración)</span>
+</div>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+<button type="button" onClick="{{r.select}}" aria-pressed="{{r.pressed}}" style="{{r.rowStyle}}">
+<sc-if value="{{r.hasB}}" hint-placeholder-val="{{ true }}">
+<span style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 10px; align-items: center; min-width: 0">
+<span style="font-size: 12px; color: #667085">{{r.b.f}}</span>
+<span class="num" style="font-size: 12.5px; color: #344054; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{r.b.g}}</span>
+<span class="num" style="font-size: 14px; font-weight: 500; color: #101828">{{r.b.m}}</span>
+</span>
+</sc-if>
+<sc-if value="{{r.noB}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; height: 36px; padding: 0 12px; border-radius: 10px; border: 1px dashed #D0D5DD; font-size: 13px; color: #667085">Sin movimiento en la cartola</span>
+</sc-if>
+<span style="display: flex; justify-content: center">
+<span style="{{r.chipStyle}}"><span style="{{r.dotStyle}}"></span>{{r.label}}</span>
+</span>
+<sc-if value="{{r.hasL}}" hint-placeholder-val="{{ true }}">
+<span style="display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 10px; align-items: center; min-width: 0">
+<span style="font-size: 12px; color: #667085">{{r.l.f}}</span>
+<span style="font-size: 14px; color: #101828; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{r.l.g}}</span>
+<span class="num" style="font-size: 14px; font-weight: 500; color: #101828">{{r.l.m}}</span>
+</span>
+</sc-if>
+<sc-if value="{{r.noL}}" hint-placeholder-val="{{ false }}">
+<span style="display: flex; align-items: center; height: 36px; padding: 0 12px; border-radius: 10px; border: 1px dashed #D0D5DD; font-size: 13px; color: #667085">Sin registro en el libro</span>
+</sc-if>
+</button>
+</sc-for>
+<sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 48px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+<div style="width: 44px; height: 44px; border-radius: 999px; background: #E3F4EF; color: #0E6E5C; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>
+<span style="font-size: 15px; font-weight: 600">Nada pendiente en este filtro</span>
+<span style="font-size: 13px; color: #667085">Todo lo que había aquí ya quedó resuelto.</span>
+</div>
+</sc-if>
+</div>
+</div>
+</section>
+
+<aside aria-label="Detalle del movimiento" style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; border: 1px solid #E4E7EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="{{sel.chipStyle}}; align-self: flex-start"><span style="{{sel.dotStyle}}"></span>{{sel.label}}</span>
+<h2 style="margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.3">{{sel.title}}</h2>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="border: 1px solid #EAECF0; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475467">Banco</span>
+<sc-if value="{{sel.hasB}}" hint-placeholder-val="{{ true }}">
+<span class="num" style="font-size: 17px; font-weight: 600">{{sel.b.m}}</span>
+<span style="font-size: 12px; color: #667085">{{sel.b.f}}-2026</span>
+<span class="num" style="font-size: 12px; color: #344054; word-break: break-word">{{sel.b.g}}</span>
+</sc-if>
+<sc-if value="{{sel.noB}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 13px; color: #667085; line-height: 1.45">Todavía no aparece en la cartola</span>
+</sc-if>
+</div>
+<div style="border: 1px solid #EAECF0; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px; min-width: 0">
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #475467">Libro</span>
+<sc-if value="{{sel.hasL}}" hint-placeholder-val="{{ true }}">
+<span class="num" style="font-size: 17px; font-weight: 600">{{sel.l.m}}</span>
+<span style="font-size: 12px; color: #667085">{{sel.l.f}}-2026</span>
+<span style="font-size: 13px; color: #344054; word-break: break-word">{{sel.l.g}}</span>
+</sc-if>
+<sc-if value="{{sel.noL}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 13px; color: #667085; line-height: 1.45">No está registrado en el libro</span>
+</sc-if>
+</div>
+</div>
+
+<div style="display: flex; gap: 10px; padding: 14px; border-radius: 12px; background: #F6F7F9">
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475467" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 600; color: #475467">{{sel.whyTitle}}</span>
+<span style="font-size: 14px; line-height: 1.5; color: #344054">{{sel.razon}}</span>
+</div>
+</div>
+
+<sc-if value="{{sel.isTrans}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #475467">No es un error: ya está en el libro y va a aparecer en la cartola cuando el banco la procese. Queda abierta y pasa al período siguiente.</p>
+</sc-if>
+
+<sc-if value="{{sel.hasDoc}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; color: #475467">Comprobante</span>
+<div style="border-radius: 14px; background: #F2F4F7; padding: 16px; display: flex; gap: 16px; align-items: center">
+<div style="width: 92px; height: 116px; flex: none; border-radius: 6px; background: #FFFFFF; border: 1px solid #E4E7EC; padding: 10px; box-sizing: border-box; display: flex; flex-direction: column; gap: 6px">
+<div style="height: 6px; width: 60%; border-radius: 3px; background: #101828"></div>
+<div style="height: 4px; width: 85%; border-radius: 2px; background: #D0D5DD"></div>
+<div style="height: 4px; width: 70%; border-radius: 2px; background: #D0D5DD"></div>
+<div style="height: 4px; width: 80%; border-radius: 2px; background: #EAECF0; margin-top: 8px"></div>
+<div style="height: 4px; width: 65%; border-radius: 2px; background: #EAECF0"></div>
+<div style="height: 4px; width: 75%; border-radius: 2px; background: #EAECF0"></div>
+<div style="height: 6px; width: 45%; border-radius: 3px; background: #4F46E5; margin-top: auto; align-self: flex-end"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.35">{{sel.doc.t}}</span>
+<span style="font-size: 13px; color: #667085; line-height: 1.4">{{sel.doc.meta}}</span>
+<span class="num" style="font-size: 15px; font-weight: 600; margin-top: 4px">{{sel.doc.amt}}</span>
+<a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px">Abrir archivo</a>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{sel.noDoc}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 12px; border: 1px dashed #D0D5DD; font-size: 13px; color: #667085">Cargo automático del banco: el respaldo es la propia cartola.</div>
+</sc-if>
+
+<sc-if value="{{sel.isSug}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; gap: 10px">
+<button type="button" onClick="{{sel.accept}}" style="flex: 1; height: 46px; border-radius: 12px; border: 0; background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500; cursor: pointer">Aceptar coincidencia</button>
+<button type="button" onClick="{{sel.dismiss}}" style="height: 46px; padding: 0 18px; border-radius: 12px; border: 1px solid #D0D5DD; background: #FFFFFF; color: #344054; font-size: 14px; font-weight: 500; cursor: pointer">Descartar</button>
+</div>
+</sc-if>
+<sc-if value="{{sel.canRegister}}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{sel.register}}" style="height: 46px; border-radius: 12px; border: 0; background: #4F46E5; color: #FFFFFF; font-size: 14px; font-weight: 500; cursor: pointer">Registrar en el libro y conciliar</button>
+</sc-if>
+<sc-if value="{{sel.canUndo}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #F6F7F9">
+<span style="font-size: 13px; color: #475467">{{sel.changeNote}}</span>
+<button type="button" onClick="{{sel.undo}}" style="height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid #D0D5DD; background: #FFFFFF; color: #344054; font-size: 13px; font-weight: 500; cursor: pointer">Deshacer</button>
+</div>
+</sc-if>
+<sc-if value="{{sel.showBy}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 13px; color: #667085">Conciliado por {{sel.by}}</span>
+</sc-if>
+
+<div style="height: 1px; background: #EAECF0"></div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 12px; font-weight: 600; color: #475467">Comentarios</span>
+<sc-if value="{{sel.hasComments}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 10px">
+<div style="width: 28px; height: 28px; flex: none; border-radius: 999px; background: #F2F4F7; color: #344054; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">CO</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; color: #667085"><span style="font-weight: 600; color: #101828">Comité</span> · 02-11 20:31</span>
+<span style="font-size: 14px; line-height: 1.5; color: #344054">¿Cuándo se cobra este cheque? Aparece en el libro pero no en la cartola.</span>
+</div>
+</div>
+<div style="display: flex; gap: 10px">
+<div style="width: 28px; height: 28px; flex: none; border-radius: 999px; background: #EEF0FF; color: #3730A3; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">AD</div>
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; color: #667085"><span style="font-weight: 600; color: #101828">Administración</span> · 03-11 09:05</span>
+<span style="font-size: 14px; line-height: 1.5; color: #344054">El proveedor lo cobra la primera semana de noviembre. Adjunté la factura.</span>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{sel.noComments}}" hint-placeholder-val="{{ true }}">
+<span style="font-size: 13px; color: #667085">Sin comentarios todavía.</span>
+</sc-if>
+<label style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; color: #475467">Agregar comentario</span>
+<textarea rows="2" placeholder="Escribe una pregunta o una aclaración…" style="resize: vertical; border: 1px solid #D0D5DD; border-radius: 12px; padding: 10px 12px; font-family: inherit; font-size: 14px; color: #101828"></textarea>
+</label>
+</div>
+</aside>
+</div>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'todos', selected: 'r4', ov: {} };
+  }
+
+  base() {
+    return [
+      { id: 'r1', status: 'conciliado', b: { f: '01-10', g: 'TRANSF 15.678.234-K CASA 58 GC OCT', m: '+$65.000' }, l: { f: '01-10', g: 'Pago gasto común · Casa 58', m: '+$65.000' }, razon: 'Mismo monto y fecha, y la glosa del banco indica la Casa 58.', doc: { t: 'Comprobante de transferencia', meta: '01-10-2026 · Casa 58', amt: '$65.000' }, by: 'el sistema (automático) · 01-11 09:15' },
+      { id: 'r2', status: 'conciliado', b: { f: '03-10', g: 'TRANSF PAGO GC CASA 21 Y 22', m: '+$130.000' }, l: { f: '03-10', g: 'Pago gasto común · Casas 21 y 22 (2 registros)', m: '+$130.000' }, razon: 'Un solo abono del banco cubre dos registros del libro (1 a 2).', doc: { t: 'Comprobante de transferencia', meta: '03-10-2026 · Casas 21 y 22', amt: '$130.000' }, by: 'Administración · 01-11 09:21' },
+      { id: 'r3', status: 'conciliado', b: { f: '05-10', g: 'PAC ELECTRICIDAD', m: '−$412.180' }, l: { f: '05-10', g: 'Luz áreas comunes · boleta 88412', m: '−$412.180' }, razon: 'Mismo monto y fecha. Es un pago automático (PAC).', doc: { t: 'Boleta de electricidad N° 88412', meta: 'Áreas comunes · emitida el 28-09-2026', amt: '$412.180' }, by: 'el sistema (automático) · 01-11 09:15' },
+      { id: 'r4', status: 'sugerido', score: '92%', b: { f: '08-10', g: 'TRANSF DE M SOTO', m: '+$65.000' }, l: { f: '08-10', g: 'Pago gasto común · Casa 34', m: '+$65.000' }, razon: 'Mismo monto y fecha. «M. Soto» es el titular registrado de la Casa 34.', doc: { t: 'Comprobante de transferencia', meta: '08-10-2026 · M. Soto', amt: '$65.000' } },
+      { id: 'r5', status: 'sugerido', score: '88%', b: { f: '10-10', g: 'TRANSF A SERV PISCINAS SPA', m: '−$180.000' }, l: { f: '09-10', g: 'Mantención piscina · factura 1182', m: '−$180.000' }, razon: 'Mismo monto, fecha a 1 día y el proveedor del libro coincide con la glosa del banco.', doc: { t: 'Factura electrónica N° 1182', meta: 'Servicios de Piscinas SpA · 09-10-2026', amt: '$180.000' } },
+      { id: 'r6', status: 'conciliado', b: { f: '30-10', g: 'REMUNERACIONES OCT', m: '−$2.310.000' }, l: { f: '30-10', g: 'Remuneraciones octubre · 3 trabajadores', m: '−$2.310.000' }, razon: 'Mismo monto y fecha.', doc: { t: 'Liquidaciones de sueldo (3)', meta: 'Octubre 2026 · incluye cotizaciones', amt: '$2.310.000' }, by: 'el sistema (automático) · 01-11 09:15' },
+      { id: 'r7', status: 'transito', b: null, l: { f: '28-10', g: 'Cheque N° 00318 · Jardinería', m: '−$420.000' }, razon: 'Cheque girado el 28-10 que el proveedor aún no cobra.', doc: { t: 'Factura N° 5531 · Jardinería', meta: 'Pagada con cheque N° 00318', amt: '$420.000' }, comments: true },
+      { id: 'r8', status: 'transito', b: null, l: { f: '29-10', g: 'Cheque N° 00319 · Mantención portón', m: '−$320.000' }, razon: 'Cheque girado el 29-10 que el proveedor aún no cobra.', doc: { t: 'Boleta de honorarios N° 214', meta: 'Mantención del portón eléctrico', amt: '$320.000' } },
+      { id: 'r9', status: 'transito', b: null, l: { f: '31-10', g: 'Pago gasto común · Casa 12', m: '+$65.000' }, razon: 'Depositado el 31-10. El banco lo abonó el 02-11, así que aparece en la cartola de noviembre.', doc: { t: 'Comprobante de depósito', meta: '31-10-2026 · Casa 12', amt: '$65.000' } },
+      { id: 'r10', status: 'pendiente', b: { f: '31-10', g: 'COMISION MANTENCION CTA', m: '−$8.330' }, l: null, razon: 'Cargo del banco que todavía no está registrado en el libro.', doc: null }
+    ];
+  }
+
+  setStatus(id, status) {
+    const ov = Object.assign({}, this.state.ov);
+    ov[id] = status;
+    this.setState({ ov: ov });
+  }
+
+  clearStatus(id) {
+    const ov = Object.assign({}, this.state.ov);
+    delete ov[id];
+    this.setState({ ov: ov });
+  }
+
+  renderVals() {
+    const META = {
+      conciliado: { label: 'Conciliado', bg: '#E3F4EF', fg: '#0B5F50', dot: '#0E6E5C' },
+      sugerido: { label: 'Sugerido', bg: '#EEF0FF', fg: '#3730A3', dot: '#4F46E5' },
+      transito: { label: 'En tránsito', bg: '#EEF1F5', fg: '#344054', dot: '#667085' },
+      pendiente: { label: 'Por conciliar', bg: '#FEF0E1', fg: '#9C3D06', dot: '#DC6803' }
+    };
+    const ov = this.state.ov || {};
+    const filter = this.state.filter;
+    const chipBase = 'display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 11px; border-radius: 999px; font-size: 12px; font-weight: 500; white-space: nowrap; ';
+    const rows = this.base().map((r) => {
+      const status = ov[r.id] || r.status;
+      const m = META[status];
+      let l = r.l;
+      if (r.id === 'r10' && status === 'conciliado') {
+        l = { f: '31-10', g: 'Comisión mantención de cuenta (registrada)', m: '−$8.330' };
+      }
+      const isSel = this.state.selected === r.id;
+      const changed = status !== r.status;
+      let changeNote = '';
+      if (changed && status === 'conciliado') changeNote = r.id === 'r10' ? 'Registrado en el libro recién.' : 'Aceptaste esta coincidencia.';
+      if (changed && status === 'pendiente') changeNote = 'Descartaste la sugerencia.';
+      return {
+        id: r.id,
+        status: status,
+        b: r.b || {},
+        l: l || {},
+        hasB: !!r.b, noB: !r.b,
+        hasL: !!l, noL: !l,
+        razon: r.razon,
+        whyTitle: status === 'transito' ? 'Por qué está abierta' : (status === 'pendiente' ? 'Qué falta' : 'Por qué coinciden'),
+        doc: r.doc || {},
+        hasDoc: !!r.doc, noDoc: !r.doc,
+        title: l ? l.g : r.b.g,
+        label: status === 'sugerido' ? 'Sugerido · ' + r.score : m.label,
+        chipStyle: chipBase + 'background: ' + m.bg + '; color: ' + m.fg,
+        dotStyle: 'width: 7px; height: 7px; border-radius: 999px; background: ' + m.dot,
+        pressed: isSel ? 'true' : 'false',
+        rowStyle: 'display: grid; grid-template-columns: minmax(0, 1fr) 170px minmax(0, 1fr); gap: 16px; align-items: center; width: 100%; padding: 14px 20px; border: 0; border-bottom: 1px solid #F2F4F7; text-align: left; cursor: pointer; font-family: inherit; background: ' + (isSel ? '#F4F5FF' : '#FFFFFF'),
+        isSug: status === 'sugerido',
+        isTrans: status === 'transito',
+        canRegister: r.id === 'r10' && status === 'pendiente',
+        canUndo: changed,
+        changeNote: changeNote,
+        showBy: status === 'conciliado' && !changed,
+        by: r.by || '',
+        hasComments: !!r.comments, noComments: !r.comments,
+        select: () => this.setState({ selected: r.id }),
+        accept: () => this.setStatus(r.id, 'conciliado'),
+        dismiss: () => this.setStatus(r.id, 'pendiente'),
+        register: () => this.setStatus(r.id, 'conciliado'),
+        undo: () => this.clearStatus(r.id)
+      };
+    });
+
+    const count = (s) => rows.filter((x) => x.status === s).length;
+    const defs = [
+      { key: 'todos', label: 'Todos', count: rows.length },
+      { key: 'sugerido', label: 'Sugeridos', count: count('sugerido') },
+      { key: 'pendiente', label: 'Por conciliar', count: count('pendiente') },
+      { key: 'transito', label: 'En tránsito', count: count('transito') },
+      { key: 'conciliado', label: 'Conciliados', count: count('conciliado') }
+    ];
+    const filters = defs.map((d) => {
+      const on = d.key === filter;
+      return {
+        label: d.label,
+        count: d.count,
+        pressed: on ? 'true' : 'false',
+        style: 'display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 12px; font-size: 14px; font-weight: 500; cursor: pointer; ' + (on ? 'border: 1px solid #101828; background: #101828; color: #FFFFFF' : 'border: 1px solid #E4E7EC; background: #FFFFFF; color: #344054'),
+        countStyle: 'display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; font-size: 12px; ' + (on ? 'background: rgba(255,255,255,0.18); color: #FFFFFF' : 'background: #F2F4F7; color: #475467'),
+        pick: () => this.setState({ filter: d.key })
+      };
+    });
+
+    const shown = filter === 'todos' ? rows : rows.filter((x) => x.status === filter);
+    const sel = rows.find((x) => x.id === this.state.selected) || rows[0];
+    const bankSide = ['r4', 'r5', 'r10'];
+    const conc = 115 + rows.filter((x) => bankSide.indexOf(x.id) >= 0 && x.status === 'conciliado').length;
+    const pct = Math.floor((conc / 118) * 100);
+    const sugCount = count('sugerido');
+    const pending = sugCount + count('pendiente');
+
+    return {
+      rows: shown,
+      empty: shown.length === 0,
+      filters: filters,
+      sel: sel,
+      conc: conc,
+      pct: pct,
+      barStyle: 'height: 8px; border-radius: 999px; background: ' + (pct === 100 ? '#0E6E5C' : '#4F46E5') + '; width: ' + pct + '%',
+      sugCount: sugCount,
+      hasSug: sugCount > 0,
+      pending: pending,
+      allDone: pending === 0,
+      notDone: pending > 0,
+      applyAll: () => {
+        const next = Object.assign({}, this.state.ov);
+        rows.forEach((x) => { if (x.status === 'sugerido') next[x.id] = 'conciliado'; });
+        this.setState({ ov: next });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
