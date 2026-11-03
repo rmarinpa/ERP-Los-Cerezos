@@ -6,7 +6,7 @@ Sistema de administración para el Condominio Los Cerezos. El primer módulo es 
 
 Prototipo navegable con **datos de ejemplo** (no son las cuentas reales del condominio):
 
-👉 https://rmarinpa.github.io/rmarinpa-erp-los-cerezos/
+👉 https://rmarinpa.github.io/rmarinpa-ERP-Los-Cerezos/
 
 | Pantalla | Para quién | Archivo |
 |---|---|---|
